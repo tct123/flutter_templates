@@ -368,7 +368,9 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
         (endDate != null &&
             endDate!.day == date.day &&
             endDate!.month == date.month &&
-            endDate!.year == date.year)) return true;
+            endDate!.year == date.year)) {
+      return true;
+    }
     return false;
   }
 

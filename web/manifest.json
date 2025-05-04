@@ -1,6 +1,6 @@
 {
-    "name": "Flutter Templates",
-    "short_name": "Templates",
+    "name": "templates",
+    "short_name": "templates",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

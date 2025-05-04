@@ -148,7 +148,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   ),
                 ),
                 CupertinoSwitch(
-                  activeColor: date.isSelected
+                  activeTrackColor: date.isSelected
                       ? HotelAppTheme.buildLightTheme().primaryColor
                       : Colors.grey.withOpacity(0.6),
                   onChanged: (bool value) {
