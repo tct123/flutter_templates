@@ -1,11 +1,11 @@
 name: templates
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -23,10 +23,10 @@ dev_dependencies:
 flutter_icons:
   ios: true
   android: true
-  image_path_ios: 'icon/ios.png'
-  image_path_android: 'icon/android.png'
-  adaptive_icon_background: '#ffffff'
-  adaptive_icon_foreground: 'icon/adaptive.png'
+  image_path_ios: "icon/ios.png"
+  image_path_android: "icon/android.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "icon/adaptive.png"
 
 flutter:
   uses-material-design: true
