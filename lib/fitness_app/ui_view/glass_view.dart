@@ -42,7 +42,7 @@ class GlassView extends StatelessWidget {
                                 topRight: Radius.circular(8.0)),
                             // boxShadow: <BoxShadow>[
                             //   BoxShadow(
-                            //       color: FintnessAppTheme.grey.withOpacity(0.2),
+                            //       color: FintnessAppTheme.grey.withValues(alpha:0.2),
                             //       offset: Offset(1.1, 1.1),
                             //       blurRadius: 10.0),
                             // ],
@@ -61,7 +61,7 @@ class GlassView extends StatelessWidget {
                                     fontSize: 14,
                                     letterSpacing: 0.0,
                                     color: FitnessAppTheme.nearlyDarkBlue
-                                        .withOpacity(0.6),
+                                        .withValues(alpha: 0.6),
                                   ),
                                 ),
                               ),

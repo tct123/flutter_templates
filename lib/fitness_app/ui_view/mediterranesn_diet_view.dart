@@ -37,7 +37,7 @@ class MediterranesnDietView extends StatelessWidget {
                       topRight: Radius.circular(68.0)),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: FitnessAppTheme.grey.withOpacity(0.2),
+                        color: FitnessAppTheme.grey.withValues(alpha: 0.2),
                         offset: const Offset(1.1, 1.1),
                         blurRadius: 10.0),
                   ],
@@ -62,7 +62,7 @@ class MediterranesnDietView extends StatelessWidget {
                                         width: 2,
                                         decoration: BoxDecoration(
                                           color: const Color(0xFF87A0E5)
-                                              .withOpacity(0.5),
+                                              .withValues(alpha: 0.5),
                                           borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
@@ -88,7 +88,7 @@ class MediterranesnDietView extends StatelessWidget {
                                                   fontSize: 16,
                                                   letterSpacing: -0.1,
                                                   color: FitnessAppTheme.grey
-                                                      .withOpacity(0.5),
+                                                      .withValues(alpha: 0.5),
                                                 ),
                                               ),
                                             ),
@@ -140,7 +140,8 @@ class MediterranesnDietView extends StatelessWidget {
                                                       letterSpacing: -0.2,
                                                       color: FitnessAppTheme
                                                           .grey
-                                                          .withOpacity(0.5),
+                                                          .withValues(
+                                                              alpha: 0.5),
                                                     ),
                                                   ),
                                                 ),
@@ -161,7 +162,7 @@ class MediterranesnDietView extends StatelessWidget {
                                         width: 2,
                                         decoration: BoxDecoration(
                                           color: const Color(0xFFF56E98)
-                                              .withOpacity(0.5),
+                                              .withValues(alpha: 0.5),
                                           borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
@@ -187,7 +188,7 @@ class MediterranesnDietView extends StatelessWidget {
                                                   fontSize: 16,
                                                   letterSpacing: -0.1,
                                                   color: FitnessAppTheme.grey
-                                                      .withOpacity(0.5),
+                                                      .withValues(alpha: 0.5),
                                                 ),
                                               ),
                                             ),
@@ -239,7 +240,8 @@ class MediterranesnDietView extends StatelessWidget {
                                                       letterSpacing: -0.2,
                                                       color: FitnessAppTheme
                                                           .grey
-                                                          .withOpacity(0.5),
+                                                          .withValues(
+                                                              alpha: 0.5),
                                                     ),
                                                   ),
                                                 ),
@@ -274,7 +276,7 @@ class MediterranesnDietView extends StatelessWidget {
                                             width: 4,
                                             color: FitnessAppTheme
                                                 .nearlyDarkBlue
-                                                .withOpacity(0.2)),
+                                                .withValues(alpha: 0.2)),
                                       ),
                                       child: Column(
                                         mainAxisAlignment:
@@ -303,7 +305,7 @@ class MediterranesnDietView extends StatelessWidget {
                                               fontSize: 12,
                                               letterSpacing: 0.0,
                                               color: FitnessAppTheme.grey
-                                                  .withOpacity(0.5),
+                                                  .withValues(alpha: 0.5),
                                             ),
                                           ),
                                         ],
@@ -374,7 +376,7 @@ class MediterranesnDietView extends StatelessWidget {
                                     width: 70,
                                     decoration: BoxDecoration(
                                       color: const Color(0xFF87A0E5)
-                                          .withOpacity(0.2),
+                                          .withValues(alpha: 0.2),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(4.0)),
                                     ),
@@ -388,7 +390,7 @@ class MediterranesnDietView extends StatelessWidget {
                                                 LinearGradient(colors: <Color>[
                                               const Color(0xFF87A0E5),
                                               const Color(0xFF87A0E5)
-                                                  .withOpacity(0.5),
+                                                  .withValues(alpha: 0.5),
                                             ]),
                                             borderRadius:
                                                 const BorderRadius.all(
@@ -408,8 +410,8 @@ class MediterranesnDietView extends StatelessWidget {
                                       fontFamily: FitnessAppTheme.fontName,
                                       fontWeight: FontWeight.w600,
                                       fontSize: 12,
-                                      color:
-                                          FitnessAppTheme.grey.withOpacity(0.5),
+                                      color: FitnessAppTheme.grey
+                                          .withValues(alpha: 0.5),
                                     ),
                                   ),
                                 ),
@@ -442,7 +444,7 @@ class MediterranesnDietView extends StatelessWidget {
                                         width: 70,
                                         decoration: BoxDecoration(
                                           color: const Color(0xFFF56E98)
-                                              .withOpacity(0.2),
+                                              .withValues(alpha: 0.2),
                                           borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
@@ -456,7 +458,8 @@ class MediterranesnDietView extends StatelessWidget {
                                                 gradient: LinearGradient(
                                                     colors: <Color>[
                                                       const Color(0xFFF56E98)
-                                                          .withOpacity(0.1),
+                                                          .withValues(
+                                                              alpha: 0.1),
                                                       const Color(0xFFF56E98),
                                                     ]),
                                                 borderRadius:
@@ -478,7 +481,7 @@ class MediterranesnDietView extends StatelessWidget {
                                           fontWeight: FontWeight.w600,
                                           fontSize: 12,
                                           color: FitnessAppTheme.grey
-                                              .withOpacity(0.5),
+                                              .withValues(alpha: 0.5),
                                         ),
                                       ),
                                     ),
@@ -512,7 +515,7 @@ class MediterranesnDietView extends StatelessWidget {
                                         width: 70,
                                         decoration: BoxDecoration(
                                           color: const Color(0xFFF1B440)
-                                              .withOpacity(0.2),
+                                              .withValues(alpha: 0.2),
                                           borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
@@ -526,7 +529,8 @@ class MediterranesnDietView extends StatelessWidget {
                                                 gradient: LinearGradient(
                                                     colors: <Color>[
                                                       const Color(0xFFF1B440)
-                                                          .withOpacity(0.1),
+                                                          .withValues(
+                                                              alpha: 0.1),
                                                       const Color(0xFFF1B440),
                                                     ]),
                                                 borderRadius:
@@ -548,7 +552,7 @@ class MediterranesnDietView extends StatelessWidget {
                                           fontWeight: FontWeight.w600,
                                           fontSize: 12,
                                           color: FitnessAppTheme.grey
-                                              .withOpacity(0.5),
+                                              .withValues(alpha: 0.5),
                                         ),
                                       ),
                                     ),
@@ -580,7 +584,7 @@ class CurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint shdowPaint = Paint()
-      ..color = Colors.black.withOpacity(0.4)
+      ..color = Colors.black.withValues(alpha: 0.4)
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..strokeWidth = 14;
@@ -594,7 +598,7 @@ class CurvePainter extends CustomPainter {
         false,
         shdowPaint);
 
-    shdowPaint.color = Colors.grey.withOpacity(0.3);
+    shdowPaint.color = Colors.grey.withValues(alpha: 0.3);
     shdowPaint.strokeWidth = 16;
     canvas.drawArc(
         Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
@@ -603,7 +607,7 @@ class CurvePainter extends CustomPainter {
         false,
         shdowPaint);
 
-    shdowPaint.color = Colors.grey.withOpacity(0.2);
+    shdowPaint.color = Colors.grey.withValues(alpha: 0.2);
     shdowPaint.strokeWidth = 20;
     canvas.drawArc(
         Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
@@ -612,7 +616,7 @@ class CurvePainter extends CustomPainter {
         false,
         shdowPaint);
 
-    shdowPaint.color = Colors.grey.withOpacity(0.1);
+    shdowPaint.color = Colors.grey.withValues(alpha: 0.1);
     shdowPaint.strokeWidth = 22;
     canvas.drawArc(
         Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),

@@ -129,7 +129,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
         color: HotelAppTheme.buildLightTheme().colorScheme.surface,
         boxShadow: <BoxShadow>[
           BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: Colors.grey.withValues(alpha: 0.2),
               offset: const Offset(0, -2),
               blurRadius: 8.0),
         ],
@@ -212,7 +212,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                   focusColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   hoverColor: Colors.transparent,
-                  splashColor: Colors.grey.withOpacity(0.2),
+                  splashColor: Colors.grey.withValues(alpha: 0.2),
                   borderRadius: const BorderRadius.all(
                     Radius.circular(4.0),
                   ),
@@ -237,7 +237,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                           style: TextStyle(
                               fontWeight: FontWeight.w100,
                               fontSize: 16,
-                              color: Colors.grey.withOpacity(0.8)),
+                              color: Colors.grey.withValues(alpha: 0.8)),
                         ),
                         const SizedBox(
                           height: 8,
@@ -261,7 +261,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
             child: Container(
               width: 1,
               height: 42,
-              color: Colors.grey.withOpacity(0.8),
+              color: Colors.grey.withValues(alpha: 0.8),
             ),
           ),
           Expanded(
@@ -271,7 +271,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                   focusColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   hoverColor: Colors.transparent,
-                  splashColor: Colors.grey.withOpacity(0.2),
+                  splashColor: Colors.grey.withValues(alpha: 0.2),
                   borderRadius: const BorderRadius.all(
                     Radius.circular(4.0),
                   ),
@@ -290,7 +290,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                           style: TextStyle(
                               fontWeight: FontWeight.w100,
                               fontSize: 16,
-                              color: Colors.grey.withOpacity(0.8)),
+                              color: Colors.grey.withValues(alpha: 0.8)),
                         ),
                         const SizedBox(
                           height: 8,
@@ -330,7 +330,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                   ),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
+                        color: Colors.grey.withValues(alpha: 0.2),
                         offset: const Offset(0, 2),
                         blurRadius: 8.0),
                   ],
@@ -361,7 +361,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
               ),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                    color: Colors.grey.withOpacity(0.4),
+                    color: Colors.grey.withValues(alpha: 0.4),
                     offset: const Offset(0, 2),
                     blurRadius: 8.0),
               ],
@@ -404,7 +404,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
               color: HotelAppTheme.buildLightTheme().colorScheme.surface,
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.grey.withValues(alpha: 0.2),
                     offset: const Offset(0, -2),
                     blurRadius: 8.0),
               ],
@@ -436,7 +436,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                     focusColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     hoverColor: Colors.transparent,
-                    splashColor: Colors.grey.withOpacity(0.2),
+                    splashColor: Colors.grey.withValues(alpha: 0.2),
                     borderRadius: const BorderRadius.all(
                       Radius.circular(4.0),
                     ),
@@ -515,7 +515,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
         color: HotelAppTheme.buildLightTheme().colorScheme.surface,
         boxShadow: <BoxShadow>[
           BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: Colors.grey.withValues(alpha: 0.2),
               offset: const Offset(0, 2),
               blurRadius: 8.0),
         ],

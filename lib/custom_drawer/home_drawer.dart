@@ -60,7 +60,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppTheme.notWhite.withOpacity(0.5),
+      color: AppTheme.notWhite.withValues(alpha: 0.5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -93,7 +93,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                               shape: BoxShape.circle,
                               boxShadow: <BoxShadow>[
                                 BoxShadow(
-                                    color: AppTheme.grey.withOpacity(0.6),
+                                    color: AppTheme.grey.withValues(alpha: 0.6),
                                     offset: const Offset(2.0, 4.0),
                                     blurRadius: 8),
                               ],
@@ -128,7 +128,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
           ),
           Divider(
             height: 1,
-            color: AppTheme.grey.withOpacity(0.6),
+            color: AppTheme.grey.withValues(alpha: 0.6),
           ),
           Expanded(
             child: ListView.builder(
@@ -142,7 +142,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
           ),
           Divider(
             height: 1,
-            color: AppTheme.grey.withOpacity(0.6),
+            color: AppTheme.grey.withValues(alpha: 0.6),
           ),
           Column(
             children: <Widget>[
@@ -182,7 +182,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        splashColor: Colors.grey.withOpacity(0.1),
+        splashColor: Colors.grey.withValues(alpha: 0.1),
         highlightColor: Colors.transparent,
         onTap: () {
           navigationtoScreen(listData.index);
@@ -258,7 +258,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                         width: MediaQuery.of(context).size.width * 0.75 - 64,
                         height: 46,
                         decoration: BoxDecoration(
-                          color: Colors.blue.withOpacity(0.2),
+                          color: Colors.blue.withValues(alpha: 0.2),
                           borderRadius: const BorderRadius.only(
                             topRight: Radius.circular(28),
                             bottomRight: Radius.circular(28),

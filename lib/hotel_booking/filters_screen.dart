@@ -63,7 +63,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 borderRadius: const BorderRadius.all(Radius.circular(24.0)),
                 boxShadow: <BoxShadow>[
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.6),
+                    color: Colors.grey.withValues(alpha: 0.6),
                     blurRadius: 8,
                     offset: const Offset(4, 4),
                   ),
@@ -150,7 +150,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 CupertinoSwitch(
                   activeTrackColor: date.isSelected
                       ? HotelAppTheme.buildLightTheme().primaryColor
-                      : Colors.grey.withOpacity(0.6),
+                      : Colors.grey.withValues(alpha: 0.6),
                   onChanged: (bool value) {
                     if (mounted) {
                       setState(() {
@@ -298,7 +298,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               : Icons.check_box_outline_blank,
                           color: date.isSelected
                               ? HotelAppTheme.buildLightTheme().primaryColor
-                              : Colors.grey.withOpacity(0.6),
+                              : Colors.grey.withValues(alpha: 0.6),
                         ),
                         const SizedBox(
                           width: 4,
@@ -366,7 +366,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
         color: HotelAppTheme.buildLightTheme().colorScheme.surface,
         boxShadow: <BoxShadow>[
           BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: Colors.grey.withValues(alpha: 0.2),
               offset: const Offset(0, 2),
               blurRadius: 4.0),
         ],

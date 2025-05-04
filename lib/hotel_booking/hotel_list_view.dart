@@ -39,7 +39,7 @@ class HotelListView extends StatelessWidget {
                     borderRadius: const BorderRadius.all(Radius.circular(16.0)),
                     boxShadow: <BoxShadow>[
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.6),
+                        color: Colors.grey.withValues(alpha: 0.6),
                         offset: const Offset(4, 4),
                         blurRadius: 16,
                       ),
@@ -91,7 +91,8 @@ class HotelListView extends StatelessWidget {
                                                 style: TextStyle(
                                                     fontSize: 14,
                                                     color: Colors.grey
-                                                        .withOpacity(0.8)),
+                                                        .withValues(
+                                                            alpha: 0.8)),
                                               ),
                                               const SizedBox(
                                                 width: 4,
@@ -111,7 +112,8 @@ class HotelListView extends StatelessWidget {
                                                   style: TextStyle(
                                                       fontSize: 14,
                                                       color: Colors.grey
-                                                          .withOpacity(0.8)),
+                                                          .withValues(
+                                                              alpha: 0.8)),
                                                 ),
                                               ),
                                             ],
@@ -137,7 +139,8 @@ class HotelListView extends StatelessWidget {
                                                   style: TextStyle(
                                                       fontSize: 14,
                                                       color: Colors.grey
-                                                          .withOpacity(0.8)),
+                                                          .withValues(
+                                                              alpha: 0.8)),
                                                 ),
                                               ],
                                             ),
@@ -167,8 +170,8 @@ class HotelListView extends StatelessWidget {
                                           '/per night',
                                           style: TextStyle(
                                               fontSize: 14,
-                                              color:
-                                                  Colors.grey.withOpacity(0.8)),
+                                              color: Colors.grey
+                                                  .withValues(alpha: 0.8)),
                                         ),
                                       ],
                                     ),

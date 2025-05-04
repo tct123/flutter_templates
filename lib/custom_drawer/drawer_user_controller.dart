@@ -149,7 +149,8 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                     color: AppTheme.white,
                     boxShadow: <BoxShadow>[
                       BoxShadow(
-                          color: AppTheme.grey.withOpacity(0.6),
+                          color: AppTheme.grey
+                              .withValues(alpha: 0.6), //withOpacity
                           blurRadius: 24),
                     ],
                   ),

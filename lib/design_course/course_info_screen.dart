@@ -87,7 +87,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                     topRight: Radius.circular(32.0)),
                 boxShadow: <BoxShadow>[
                   BoxShadow(
-                      color: DesignCourseAppTheme.grey.withOpacity(0.2),
+                      color: DesignCourseAppTheme.grey.withValues(alpha: 0.2),
                       offset: const Offset(1.1, 1.1),
                       blurRadius: 10.0),
                 ],
@@ -210,7 +210,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                         Radius.circular(16.0)),
                                     border: Border.all(
                                         color: DesignCourseAppTheme.grey
-                                            .withOpacity(0.2)),
+                                            .withValues(alpha: 0.2)),
                                   ),
                                   child: TextButton(
                                     style: TextButton.styleFrom(
@@ -239,7 +239,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                         BoxShadow(
                                             color: DesignCourseAppTheme
                                                 .nearlyBlue
-                                                .withOpacity(0.5),
+                                                .withValues(alpha: 0.5),
                                             offset: const Offset(1.1, 1.1),
                                             blurRadius: 10.0),
                                       ],
@@ -350,7 +350,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
           borderRadius: const BorderRadius.all(Radius.circular(16.0)),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: DesignCourseAppTheme.grey.withOpacity(0.2),
+                color: DesignCourseAppTheme.grey.withValues(alpha: 0.2),
                 offset: const Offset(1.1, 1.1),
                 blurRadius: 8.0),
           ],
