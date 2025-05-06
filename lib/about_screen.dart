@@ -45,7 +45,7 @@ class _AboutScreenState extends State<AboutScreen> {
               final url = Uri(
                 scheme: 'https',
                 host: 'github.com',
-                path: '/nohli/flutter_templates',
+                path: '/tct123/flutter_templates',
               );
               if (await canLaunchUrl(url)) launchUrl(url);
             },
