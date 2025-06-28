@@ -30,7 +30,6 @@ class HotelAppTheme {
     final ThemeData base = ThemeData.light();
     return base.copyWith(
       primaryColor: primaryColor,
-      indicatorColor: Colors.white,
       splashColor: Colors.white24,
       splashFactory: InkRipple.splashFactory,
       canvasColor: Colors.white,
@@ -45,6 +44,7 @@ class HotelAppTheme {
       colorScheme: colorScheme
           .copyWith(surface: const Color(0xFFFFFFFF))
           .copyWith(error: const Color(0xFFB00020)),
+      tabBarTheme: TabBarThemeData(indicatorColor: Colors.white),
     );
   }
 }
