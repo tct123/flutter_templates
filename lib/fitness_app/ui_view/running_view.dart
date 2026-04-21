@@ -21,7 +21,10 @@ class RunningView extends StatelessWidget {
           opacity: animation,
           child: Transform(
             transform: Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation.value), 0.0),
+              0.0,
+              30 * (1.0 - animation.value),
+              0.0,
+            ),
             child: Column(
               children: <Widget>[
                 Padding(
@@ -35,16 +38,19 @@ class RunningView extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: FitnessAppTheme.white,
                             borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(8.0),
-                                bottomLeft: Radius.circular(8.0),
-                                bottomRight: Radius.circular(8.0),
-                                topRight: Radius.circular(8.0)),
+                              topLeft: Radius.circular(8.0),
+                              bottomLeft: Radius.circular(8.0),
+                              bottomRight: Radius.circular(8.0),
+                              topRight: Radius.circular(8.0),
+                            ),
                             boxShadow: <BoxShadow>[
                               BoxShadow(
-                                  color: FitnessAppTheme.grey
-                                      .withValues(alpha: 0.4),
-                                  offset: const Offset(1.1, 1.1),
-                                  blurRadius: 10.0),
+                                color: FitnessAppTheme.grey.withValues(
+                                  alpha: 0.4,
+                                ),
+                                offset: const Offset(1.1, 1.1),
+                                blurRadius: 10.0,
+                              ),
                             ],
                           ),
                           child: Stack(
@@ -52,13 +58,15 @@ class RunningView extends StatelessWidget {
                             children: <Widget>[
                               ClipRRect(
                                 borderRadius: const BorderRadius.all(
-                                    Radius.circular(8.0)),
+                                  Radius.circular(8.0),
+                                ),
                                 child: SizedBox(
                                   height: 74,
                                   child: AspectRatio(
                                     aspectRatio: 1.714,
                                     child: Image.asset(
-                                        'assets/fitness_app/back.png'),
+                                      'assets/fitness_app/back.png',
+                                    ),
                                   ),
                                 ),
                               ),
@@ -104,8 +112,9 @@ class RunningView extends StatelessWidget {
                                         fontWeight: FontWeight.w500,
                                         fontSize: 10,
                                         letterSpacing: 0.0,
-                                        color: FitnessAppTheme.grey
-                                            .withValues(alpha: 0.5),
+                                        color: FitnessAppTheme.grey.withValues(
+                                          alpha: 0.5,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -123,7 +132,7 @@ class RunningView extends StatelessWidget {
                           height: 110,
                           child: Image.asset('assets/fitness_app/runner.png'),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

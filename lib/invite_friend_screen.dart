@@ -14,17 +14,17 @@ class _InviteFriendState extends State<InviteFriend> {
       children: <Widget>[
         Container(
           padding: EdgeInsets.only(
-              top: MediaQuery.of(context).padding.top, left: 16, right: 16),
+            top: MediaQuery.of(context).padding.top,
+            left: 16,
+            right: 16,
+          ),
           child: Image.asset('assets/images/inviteImage.png'),
         ),
         Container(
           padding: const EdgeInsets.only(top: 8),
           child: const Text(
             'Invite Your Friends',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
         Container(
@@ -32,9 +32,7 @@ class _InviteFriendState extends State<InviteFriend> {
           child: const Text(
             'Are you one of those who makes everything\n at the last moment?',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 16,
-            ),
+            style: TextStyle(fontSize: 16),
           ),
         ),
         Expanded(
@@ -49,9 +47,10 @@ class _InviteFriendState extends State<InviteFriend> {
                   borderRadius: const BorderRadius.all(Radius.circular(4.0)),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: Colors.grey.withValues(alpha: 0.6),
-                        offset: const Offset(4, 4),
-                        blurRadius: 8.0),
+                      color: Colors.grey.withValues(alpha: 0.6),
+                      offset: const Offset(4, 4),
+                      blurRadius: 8.0,
+                    ),
                   ],
                 ),
                 child: Material(
@@ -62,11 +61,7 @@ class _InviteFriendState extends State<InviteFriend> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(
-                            Icons.share,
-                            color: Colors.white,
-                            size: 22,
-                          ),
+                          Icon(Icons.share, color: Colors.white, size: 22),
                           Padding(
                             padding: EdgeInsets.all(4.0),
                             child: Text(
@@ -85,7 +80,7 @@ class _InviteFriendState extends State<InviteFriend> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

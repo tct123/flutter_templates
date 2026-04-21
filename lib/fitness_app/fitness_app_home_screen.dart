@@ -17,16 +17,16 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
     with TickerProviderStateMixin {
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
 
-  Widget tabBody = Container(
-    color: FitnessAppTheme.background,
-  );
+  Widget tabBody = Container(color: FitnessAppTheme.background);
 
   late final AnimationController animationController;
   @override
   void initState() {
     super.initState();
     animationController = AnimationController(
-        duration: const Duration(milliseconds: 600), vsync: this);
+      duration: const Duration(milliseconds: 600),
+      vsync: this,
+    );
     for (final TabIconData tab in tabIconsList) {
       tab.isSelected = false;
     }
@@ -50,12 +50,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
           if (!snapshot.hasData) {
             return const SizedBox();
           } else {
-            return Stack(
-              children: <Widget>[
-                tabBody,
-                bottomBar(),
-              ],
-            );
+            return Stack(children: <Widget>[tabBody, bottomBar()]);
           }
         },
       ),
@@ -70,9 +65,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
   Widget bottomBar() {
     return Column(
       children: <Widget>[
-        const Expanded(
-          child: SizedBox(),
-        ),
+        const Expanded(child: SizedBox()),
         BottomBarView(
           tabIconsList: tabIconsList,
           addClick: () {},
@@ -81,8 +74,9 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
               animationController.reverse().then<dynamic>((_) {
                 if (mounted) {
                   setState(() {
-                    tabBody =
-                        MyDiaryScreen(animationController: animationController);
+                    tabBody = MyDiaryScreen(
+                      animationController: animationController,
+                    );
                   });
                 }
                 return;
@@ -92,7 +86,8 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
                 if (mounted) {
                   setState(() {
                     tabBody = TrainingScreen(
-                        animationController: animationController);
+                      animationController: animationController,
+                    );
                   });
                 }
                 return;

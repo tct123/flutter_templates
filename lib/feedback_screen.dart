@@ -19,17 +19,17 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).padding.top, left: 16, right: 16),
+                top: MediaQuery.of(context).padding.top,
+                left: 16,
+                right: 16,
+              ),
               child: Image.asset('assets/images/feedbackImage.png'),
             ),
             Container(
               padding: const EdgeInsets.only(top: 8),
               child: const Text(
                 'Your Feedback',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             Container(
@@ -37,9 +37,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               child: const Text(
                 'Give your best time for this moment.',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                ),
+                style: TextStyle(fontSize: 16),
               ),
             ),
             _buildComposer(),
@@ -52,13 +50,15 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     height: 40,
                     decoration: BoxDecoration(
                       color: Colors.blue,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(4.0)),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(4.0),
+                      ),
                       boxShadow: <BoxShadow>[
                         BoxShadow(
-                            color: Colors.grey.withValues(alpha: 0.6),
-                            offset: const Offset(4, 4),
-                            blurRadius: 8.0),
+                          color: Colors.grey.withValues(alpha: 0.6),
+                          offset: const Offset(4, 4),
+                          blurRadius: 8.0,
+                        ),
                       ],
                     ),
                     child: Material(
@@ -83,7 +83,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -99,9 +99,10 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
           borderRadius: BorderRadius.circular(8),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: Colors.grey.withValues(alpha: 0.8),
-                offset: const Offset(4, 4),
-                blurRadius: 8),
+              color: Colors.grey.withValues(alpha: 0.8),
+              offset: const Offset(4, 4),
+              blurRadius: 8,
+            ),
           ],
         ),
         child: ClipRRect(
@@ -123,8 +124,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 ),
                 cursorColor: Colors.blue,
                 decoration: const InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Enter your feedback...'),
+                  border: InputBorder.none,
+                  hintText: 'Enter your feedback...',
+                ),
               ),
             ),
           ),

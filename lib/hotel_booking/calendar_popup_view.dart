@@ -37,7 +37,9 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
   void initState() {
     super.initState();
     animationController = AnimationController(
-        duration: const Duration(milliseconds: 400), vsync: this);
+      duration: const Duration(milliseconds: 400),
+      vsync: this,
+    );
     startDate = widget.initialStartDate;
     endDate = widget.initialEndDate;
     animationController.forward();
@@ -77,13 +79,15 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                     decoration: BoxDecoration(
                       color:
                           HotelAppTheme.buildLightTheme().colorScheme.surface,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(24.0)),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(24.0),
+                      ),
                       boxShadow: <BoxShadow>[
                         BoxShadow(
-                            color: Colors.grey.withValues(alpha: 0.2),
-                            offset: const Offset(4, 4),
-                            blurRadius: 8.0),
+                          color: Colors.grey.withValues(alpha: 0.2),
+                          offset: const Offset(4, 4),
+                          blurRadius: 8.0,
+                        ),
                       ],
                     ),
                     child: Column(
@@ -101,14 +105,12 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                     'From',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 16,
-                                        color:
-                                            Colors.grey.withValues(alpha: 0.8)),
+                                      fontWeight: FontWeight.w100,
+                                      fontSize: 16,
+                                      color: Colors.grey.withValues(alpha: 0.8),
+                                    ),
                                   ),
-                                  const SizedBox(
-                                    height: 4,
-                                  ),
+                                  const SizedBox(height: 4),
                                   Text(
                                     DateFormat('EEE, dd MMM').format(startDate),
                                     style: const TextStyle(
@@ -132,21 +134,22 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                   Text(
                                     'To',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.w100,
-                                        fontSize: 16,
-                                        color:
-                                            Colors.grey.withValues(alpha: 0.8)),
+                                      fontWeight: FontWeight.w100,
+                                      fontSize: 16,
+                                      color: Colors.grey.withValues(alpha: 0.8),
+                                    ),
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
                                     DateFormat('EEE, dd MMM').format(endDate),
                                     style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ],
                               ),
-                            )
+                            ),
                           ],
                         ),
                         const Divider(height: 1),
@@ -157,24 +160,29 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                           initialStartDate: widget.initialStartDate,
                           startEndDateChange:
                               (DateTime startDateData, DateTime endDateData) {
-                            if (mounted) {
-                              setState(() {
-                                startDate = startDateData;
-                                endDate = endDateData;
-                              });
-                            }
-                          },
+                                if (mounted) {
+                                  setState(() {
+                                    startDate = startDateData;
+                                    endDate = endDateData;
+                                  });
+                                }
+                              },
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: 16, right: 16, bottom: 16, top: 8),
+                            left: 16,
+                            right: 16,
+                            bottom: 16,
+                            top: 8,
+                          ),
                           child: Container(
                             height: 48,
                             decoration: BoxDecoration(
                               color:
                                   HotelAppTheme.buildLightTheme().primaryColor,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(24.0)),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(24.0),
+                              ),
                               boxShadow: <BoxShadow>[
                                 BoxShadow(
                                   color: Colors.grey.withValues(alpha: 0.6),
@@ -187,7 +195,8 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                               color: Colors.transparent,
                               child: InkWell(
                                 borderRadius: const BorderRadius.all(
-                                    Radius.circular(24.0)),
+                                  Radius.circular(24.0),
+                                ),
                                 highlightColor: Colors.transparent,
                                 onTap: () {
                                   try {
@@ -202,15 +211,16 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                   child: Text(
                                     'Apply',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 18,
-                                        color: Colors.white),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),

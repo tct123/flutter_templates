@@ -19,7 +19,9 @@ class _CategoryListViewState extends State<CategoryListView>
   void initState() {
     super.initState();
     animationController = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
   }
 
   @override
@@ -56,10 +58,15 @@ class _CategoryListViewState extends State<CategoryListView>
                       : Category.categoryList.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
-                          CurvedAnimation(
-                              parent: animationController,
-                              curve: Interval((1 / count) * index, 1.0,
-                                  curve: Curves.fastOutSlowIn)));
+                        CurvedAnimation(
+                          parent: animationController,
+                          curve: Interval(
+                            (1 / count) * index,
+                            1.0,
+                            curve: Curves.fastOutSlowIn,
+                          ),
+                        ),
+                      );
                   animationController.forward();
 
                   return CategoryView(
@@ -103,7 +110,10 @@ class CategoryView extends StatelessWidget {
           opacity: animation,
           child: Transform(
             transform: Matrix4.translationValues(
-                100 * (1.0 - animation.value), 0.0, 0.0),
+              100 * (1.0 - animation.value),
+              0.0,
+              0.0,
+            ),
             child: GestureDetector(
               onTap: () => callback(),
               child: SizedBox(
@@ -117,14 +127,13 @@ class CategoryView extends StatelessWidget {
                           child: Container(
                             decoration: const BoxDecoration(
                               color: Color(0xFFF8FAFB),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(16.0)),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(16.0),
+                              ),
                             ),
                             child: Row(
                               children: <Widget>[
-                                const SizedBox(
-                                  width: 48 + 24.0,
-                                ),
+                                const SizedBox(width: 48 + 24.0),
                                 Expanded(
                                   child: Column(
                                     children: <Widget>[
@@ -142,12 +151,12 @@ class CategoryView extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      const Expanded(
-                                        child: SizedBox(),
-                                      ),
+                                      const Expanded(child: SizedBox()),
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                            right: 16, bottom: 8),
+                                          right: 16,
+                                          bottom: 8,
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -189,7 +198,9 @@ class CategoryView extends StatelessWidget {
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                            bottom: 16, right: 16),
+                                          bottom: 16,
+                                          right: 16,
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -212,7 +223,8 @@ class CategoryView extends StatelessWidget {
                                                 color: DesignCourseAppTheme
                                                     .nearlyBlue,
                                                 borderRadius: BorderRadius.all(
-                                                    Radius.circular(8.0)),
+                                                  Radius.circular(8.0),
+                                                ),
                                               ),
                                               child: const Padding(
                                                 padding: EdgeInsets.all(4.0),
@@ -222,7 +234,7 @@ class CategoryView extends StatelessWidget {
                                                       .nearlyWhite,
                                                 ),
                                               ),
-                                            )
+                                            ),
                                           ],
                                         ),
                                       ),
@@ -232,21 +244,26 @@ class CategoryView extends StatelessWidget {
                               ],
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 24, bottom: 24, left: 16),
+                      padding: const EdgeInsets.only(
+                        top: 24,
+                        bottom: 24,
+                        left: 16,
+                      ),
                       child: Row(
                         children: <Widget>[
                           ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(16.0)),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(16.0),
+                            ),
                             child: AspectRatio(
-                                aspectRatio: 1.0,
-                                child: Image.asset(category.imagePath)),
-                          )
+                              aspectRatio: 1.0,
+                              child: Image.asset(category.imagePath),
+                            ),
+                          ),
                         ],
                       ),
                     ),

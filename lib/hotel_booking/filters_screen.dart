@@ -34,28 +34,24 @@ class _FiltersScreenState extends State<FiltersScreen> {
               child: Column(
                 children: <Widget>[
                   priceBarFilter(),
-                  const Divider(
-                    height: 1,
-                  ),
+                  const Divider(height: 1),
                   popularFilter(),
-                  const Divider(
-                    height: 1,
-                  ),
+                  const Divider(height: 1),
                   distanceViewUI(),
-                  const Divider(
-                    height: 1,
-                  ),
-                  allAccommodationUI()
+                  const Divider(height: 1),
+                  allAccommodationUI(),
                 ],
               ),
             ),
           ),
-          const Divider(
-            height: 1,
-          ),
+          const Divider(height: 1),
           Padding(
-            padding:
-                const EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 8),
+            padding: const EdgeInsets.only(
+              left: 16,
+              right: 16,
+              bottom: 16,
+              top: 8,
+            ),
             child: Container(
               height: 48,
               decoration: BoxDecoration(
@@ -79,15 +75,16 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     child: Text(
                       'Apply',
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          color: Colors.white),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -99,26 +96,27 @@ class _FiltersScreenState extends State<FiltersScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding:
-              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
+            top: 16,
+            bottom: 8,
+          ),
           child: Text(
             'Type of Accommodation',
             textAlign: TextAlign.left,
             style: TextStyle(
-                color: Colors.grey,
-                fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
-                fontWeight: FontWeight.normal),
+              color: Colors.grey,
+              fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(right: 16, left: 16),
-          child: Column(
-            children: getAccomodationListUI(),
-          ),
+          child: Column(children: getAccomodationListUI()),
         ),
-        const SizedBox(
-          height: 8,
-        ),
+        const SizedBox(height: 8),
       ],
     );
   }
@@ -166,9 +164,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
         ),
       );
       if (i == 0) {
-        noList.add(const Divider(
-          height: 1,
-        ));
+        noList.add(const Divider(height: 1));
       }
     }
     return noList;
@@ -213,15 +209,20 @@ class _FiltersScreenState extends State<FiltersScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding:
-              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
+            top: 16,
+            bottom: 8,
+          ),
           child: Text(
             'Distance from city center',
             textAlign: TextAlign.left,
             style: TextStyle(
-                color: Colors.grey,
-                fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
-                fontWeight: FontWeight.normal),
+              color: Colors.grey,
+              fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
         SliderView(
@@ -230,9 +231,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
             distValue = value;
           },
         ),
-        const SizedBox(
-          height: 8,
-        ),
+        const SizedBox(height: 8),
       ],
     );
   }
@@ -243,26 +242,27 @@ class _FiltersScreenState extends State<FiltersScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding:
-              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
+            top: 16,
+            bottom: 8,
+          ),
           child: Text(
             'Popular filters',
             textAlign: TextAlign.left,
             style: TextStyle(
-                color: Colors.grey,
-                fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
-                fontWeight: FontWeight.normal),
+              color: Colors.grey,
+              fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(right: 16, left: 16),
-          child: Column(
-            children: getPList(),
-          ),
+          child: Column(children: getPList()),
         ),
-        const SizedBox(
-          height: 8,
-        )
+        const SizedBox(height: 8),
       ],
     );
   }
@@ -276,43 +276,41 @@ class _FiltersScreenState extends State<FiltersScreen> {
       for (int i = 0; i < columnCount; i++) {
         try {
           final PopularFilterListData date = popularFilterListData[count];
-          listUI.add(Expanded(
-            child: Row(
-              children: <Widget>[
-                InkWell(
-                  borderRadius: const BorderRadius.all(Radius.circular(4.0)),
-                  onTap: () {
-                    if (mounted) {
-                      setState(() {
-                        date.isSelected = !date.isSelected;
-                      });
-                    }
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: <Widget>[
-                        Icon(
-                          date.isSelected
-                              ? Icons.check_box
-                              : Icons.check_box_outline_blank,
-                          color: date.isSelected
-                              ? HotelAppTheme.buildLightTheme().primaryColor
-                              : Colors.grey.withValues(alpha: 0.6),
-                        ),
-                        const SizedBox(
-                          width: 4,
-                        ),
-                        Text(
-                          date.titleTxt,
-                        ),
-                      ],
+          listUI.add(
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  InkWell(
+                    borderRadius: const BorderRadius.all(Radius.circular(4.0)),
+                    onTap: () {
+                      if (mounted) {
+                        setState(() {
+                          date.isSelected = !date.isSelected;
+                        });
+                      }
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            date.isSelected
+                                ? Icons.check_box
+                                : Icons.check_box_outline_blank,
+                            color: date.isSelected
+                                ? HotelAppTheme.buildLightTheme().primaryColor
+                                : Colors.grey.withValues(alpha: 0.6),
+                          ),
+                          const SizedBox(width: 4),
+                          Text(date.titleTxt),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ));
+          );
           if (count < popularFilterListData.length - 1) {
             count += 1;
           } else {
@@ -322,11 +320,13 @@ class _FiltersScreenState extends State<FiltersScreen> {
           debugPrint('filters_screen.dart: $e');
         }
       }
-      noList.add(Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: listUI,
-      ));
+      noList.add(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: listUI,
+        ),
+      );
     }
     return noList;
   }
@@ -342,9 +342,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
             'Price (for 1 night)',
             textAlign: TextAlign.left,
             style: TextStyle(
-                color: Colors.grey,
-                fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
-                fontWeight: FontWeight.normal),
+              color: Colors.grey,
+              fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
         RangeSliderView(
@@ -353,9 +354,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
             _values = values;
           },
         ),
-        const SizedBox(
-          height: 8,
-        )
+        const SizedBox(height: 8),
       ],
     );
   }
@@ -366,14 +365,18 @@ class _FiltersScreenState extends State<FiltersScreen> {
         color: HotelAppTheme.buildLightTheme().colorScheme.surface,
         boxShadow: <BoxShadow>[
           BoxShadow(
-              color: Colors.grey.withValues(alpha: 0.2),
-              offset: const Offset(0, 2),
-              blurRadius: 4.0),
+            color: Colors.grey.withValues(alpha: 0.2),
+            offset: const Offset(0, 2),
+            blurRadius: 4.0,
+          ),
         ],
       ),
       child: Padding(
         padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top, left: 8, right: 8),
+          top: MediaQuery.of(context).padding.top,
+          left: 8,
+          right: 8,
+        ),
         child: Row(
           children: <Widget>[
             Container(
@@ -381,9 +384,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
               width: AppBar().preferredSize.height + 40,
               height: AppBar().preferredSize.height,
               child: InkWell(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(32.0),
-                ),
+                borderRadius: const BorderRadius.all(Radius.circular(32.0)),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -397,17 +398,14 @@ class _FiltersScreenState extends State<FiltersScreen> {
               child: Center(
                 child: Text(
                   'Filters',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 22,
-                  ),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 22),
                 ),
               ),
             ),
             SizedBox(
               width: AppBar().preferredSize.height + 40,
               height: AppBar().preferredSize.height,
-            )
+            ),
           ],
         ),
       ),

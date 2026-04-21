@@ -14,17 +14,17 @@ class _HelpScreenState extends State<HelpScreen> {
       children: <Widget>[
         Container(
           padding: EdgeInsets.only(
-              top: MediaQuery.of(context).padding.top, left: 16, right: 16),
+            top: MediaQuery.of(context).padding.top,
+            left: 16,
+            right: 16,
+          ),
           child: Image.asset('assets/images/helpImage.png'),
         ),
         Container(
           padding: const EdgeInsets.only(top: 8),
           child: const Text(
             'How can we help you?',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
         Container(
@@ -32,9 +32,7 @@ class _HelpScreenState extends State<HelpScreen> {
           child: const Text(
             'It looks like you are experiencing problems\nwith our sign up process. We are here to\nhelp so please get in touch with us',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 16,
-            ),
+            style: TextStyle(fontSize: 16),
           ),
         ),
         Expanded(
@@ -49,9 +47,10 @@ class _HelpScreenState extends State<HelpScreen> {
                   borderRadius: const BorderRadius.all(Radius.circular(4.0)),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: Colors.grey.withValues(alpha: 0.6),
-                        offset: const Offset(4, 4),
-                        blurRadius: 8.0),
+                      color: Colors.grey.withValues(alpha: 0.6),
+                      offset: const Offset(4, 4),
+                      blurRadius: 8.0,
+                    ),
                   ],
                 ),
                 child: Material(
@@ -75,7 +74,7 @@ class _HelpScreenState extends State<HelpScreen> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

@@ -77,15 +77,20 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     builder: (BuildContext context, _) {
                       return ScaleTransition(
                         scale: AlwaysStoppedAnimation<double>(
-                            1.0 - (widget.iconAnimationController.value) * 0.2),
+                          1.0 - (widget.iconAnimationController.value) * 0.2,
+                        ),
                         child: RotationTransition(
-                          turns: AlwaysStoppedAnimation<double>(Tween<double>(
-                                      begin: 0.0, end: 24.0)
-                                  .animate(CurvedAnimation(
-                                      parent: widget.iconAnimationController,
-                                      curve: Curves.fastOutSlowIn))
-                                  .value /
-                              360),
+                          turns: AlwaysStoppedAnimation<double>(
+                            Tween<double>(begin: 0.0, end: 24.0)
+                                    .animate(
+                                      CurvedAnimation(
+                                        parent: widget.iconAnimationController,
+                                        curve: Curves.fastOutSlowIn,
+                                      ),
+                                    )
+                                    .value /
+                                360,
+                          ),
                           child: Container(
                             height: 120,
                             width: 120,
@@ -93,14 +98,16 @@ class _HomeDrawerState extends State<HomeDrawer> {
                               shape: BoxShape.circle,
                               boxShadow: <BoxShadow>[
                                 BoxShadow(
-                                    color: AppTheme.grey.withValues(alpha: 0.6),
-                                    offset: const Offset(2.0, 4.0),
-                                    blurRadius: 8),
+                                  color: AppTheme.grey.withValues(alpha: 0.6),
+                                  offset: const Offset(2.0, 4.0),
+                                  blurRadius: 8,
+                                ),
                               ],
                             ),
                             child: ClipRRect(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(60.0)),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(60.0),
+                              ),
                               child: Image.asset('assets/images/userImage.png'),
                             ),
                           ),
@@ -123,13 +130,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 4,
-          ),
-          Divider(
-            height: 1,
-            color: AppTheme.grey.withValues(alpha: 0.6),
-          ),
+          const SizedBox(height: 4),
+          Divider(height: 1, color: AppTheme.grey.withValues(alpha: 0.6)),
           Expanded(
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
@@ -140,10 +142,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
               },
             ),
           ),
-          Divider(
-            height: 1,
-            color: AppTheme.grey.withValues(alpha: 0.6),
-          ),
+          Divider(height: 1, color: AppTheme.grey.withValues(alpha: 0.6)),
           Column(
             children: <Widget>[
               Material(
@@ -168,9 +167,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).padding.bottom,
-              )
+              SizedBox(height: MediaQuery.of(context).padding.bottom),
             ],
           ),
         ],
@@ -208,26 +205,26 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     //   ),
                     // ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(4.0),
-                  ),
+                  const Padding(padding: EdgeInsets.all(4.0)),
                   if (listData.isAssetsImage)
                     SizedBox(
                       width: 24,
                       height: 24,
-                      child: Image.asset(listData.imageName,
-                          color: widget.screenIndex == listData.index
-                              ? Colors.blue
-                              : AppTheme.nearlyBlack),
-                    )
-                  else
-                    Icon(listData.icon?.icon,
+                      child: Image.asset(
+                        listData.imageName,
                         color: widget.screenIndex == listData.index
                             ? Colors.blue
-                            : AppTheme.nearlyBlack),
-                  const Padding(
-                    padding: EdgeInsets.all(4.0),
-                  ),
+                            : AppTheme.nearlyBlack,
+                      ),
+                    )
+                  else
+                    Icon(
+                      listData.icon?.icon,
+                      color: widget.screenIndex == listData.index
+                          ? Colors.blue
+                          : AppTheme.nearlyBlack,
+                    ),
+                  const Padding(padding: EdgeInsets.all(4.0)),
                   Text(
                     listData.labelName,
                     style: TextStyle(
@@ -248,10 +245,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 builder: (BuildContext context, _) {
                   return Transform(
                     transform: Matrix4.translationValues(
-                        (MediaQuery.of(context).size.width * 0.75 - 64) *
-                            (1.0 - widget.iconAnimationController.value - 1.0),
-                        0.0,
-                        0.0),
+                      (MediaQuery.of(context).size.width * 0.75 - 64) *
+                          (1.0 - widget.iconAnimationController.value - 1.0),
+                      0.0,
+                      0.0,
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8, bottom: 8),
                       child: Container(
@@ -270,7 +268,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 },
               )
             else
-              const SizedBox()
+              const SizedBox(),
           ],
         ),
       ),

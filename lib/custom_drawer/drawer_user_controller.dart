@@ -38,13 +38,21 @@ class _DrawerUserControllerState extends State<DrawerUserController>
   void initState() {
     super.initState();
     animationController = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    iconAnimationController =
-        AnimationController(vsync: this, duration: const Duration());
-    iconAnimationController.animateTo(1.0,
-        duration: const Duration(), curve: Curves.fastOutSlowIn);
-    scrollController =
-        ScrollController(initialScrollOffset: widget.drawerWidth);
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
+    iconAnimationController = AnimationController(
+      vsync: this,
+      duration: const Duration(),
+    );
+    iconAnimationController.animateTo(
+      1.0,
+      duration: const Duration(),
+      curve: Curves.fastOutSlowIn,
+    );
+    scrollController = ScrollController(
+      initialScrollOffset: widget.drawerWidth,
+    );
     scrollController.addListener(() {
       if (scrollController.offset <= 0) {
         if (scrolloffset != 1.0) {
@@ -58,13 +66,17 @@ class _DrawerUserControllerState extends State<DrawerUserController>
             });
           }
         }
-        iconAnimationController.animateTo(0.0,
-            duration: const Duration(), curve: Curves.fastOutSlowIn);
+        iconAnimationController.animateTo(
+          0.0,
+          duration: const Duration(),
+          curve: Curves.fastOutSlowIn,
+        );
       } else if (scrollController.offset < widget.drawerWidth.floor()) {
         iconAnimationController.animateTo(
-            (scrollController.offset * 100 / (widget.drawerWidth)) / 100,
-            duration: const Duration(),
-            curve: Curves.fastOutSlowIn);
+          (scrollController.offset * 100 / (widget.drawerWidth)) / 100,
+          duration: const Duration(),
+          curve: Curves.fastOutSlowIn,
+        );
       } else {
         if (scrolloffset != 0.0) {
           if (mounted) {
@@ -77,8 +89,11 @@ class _DrawerUserControllerState extends State<DrawerUserController>
             });
           }
         }
-        iconAnimationController.animateTo(1.0,
-            duration: const Duration(), curve: Curves.fastOutSlowIn);
+        iconAnimationController.animateTo(
+          1.0,
+          duration: const Duration(),
+          curve: Curves.fastOutSlowIn,
+        );
       }
     });
     WidgetsBinding.instance.addPostFrameCallback((_) => getInitState());
@@ -93,9 +108,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
   }
 
   Future<bool> getInitState() async {
-    scrollController.jumpTo(
-      widget.drawerWidth,
-    );
+    scrollController.jumpTo(widget.drawerWidth);
     return true;
   }
 
@@ -123,7 +136,10 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                     return Transform(
                       //transform we use for the stable drawer  we, not need to move with scroll view
                       transform: Matrix4.translationValues(
-                          scrollController.offset, 0.0, 0.0),
+                        scrollController.offset,
+                        0.0,
+                        0.0,
+                      ),
                       child: HomeDrawer(
                         screenIndex: widget.screenIndex,
                         iconAnimationController: iconAnimationController,
@@ -149,9 +165,11 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                     color: AppTheme.white,
                     boxShadow: <BoxShadow>[
                       BoxShadow(
-                          color: AppTheme.grey
-                              .withValues(alpha: 0.6), //withOpacity
-                          blurRadius: 24),
+                        color: AppTheme.grey.withValues(
+                          alpha: 0.6,
+                        ), //withOpacity
+                        blurRadius: 24,
+                      ),
                     ],
                   ),
                   child: Stack(
@@ -163,15 +181,14 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                       ),
                       //alternative touch(user Interface) for widget.screen, for example, drawer is close we need to tap on a few home screen area and close the drawer
                       if (scrolloffset == 1.0)
-                        GestureDetector(
-                          onTap: () => onDrawerClick(),
-                        ),
+                        GestureDetector(onTap: () => onDrawerClick()),
 
                       // this just menu and arrow icon animation
                       Padding(
                         padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).padding.top + 8,
-                            left: 8),
+                          top: MediaQuery.of(context).padding.top + 8,
+                          left: 8,
+                        ),
                         child: SizedBox(
                           width: AppBar().preferredSize.height - 8,
                           height: AppBar().preferredSize.height - 8,
@@ -179,18 +196,22 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                             color: Colors.transparent,
                             child: InkWell(
                               borderRadius: BorderRadius.circular(
-                                  AppBar().preferredSize.height),
+                                AppBar().preferredSize.height,
+                              ),
                               onTap: () {
-                                FocusScope.of(context)
-                                    .requestFocus(FocusNode());
+                                FocusScope.of(
+                                  context,
+                                ).requestFocus(FocusNode());
                                 onDrawerClick();
                               },
                               child: Center(
                                 // if you use your own menu view UI you add form initialization
-                                child: widget.menuView ??
+                                child:
+                                    widget.menuView ??
                                     AnimatedIcon(
-                                        icon: widget.animatedIconData,
-                                        progress: iconAnimationController),
+                                      icon: widget.animatedIconData,
+                                      progress: iconAnimationController,
+                                    ),
                               ),
                             ),
                           ),

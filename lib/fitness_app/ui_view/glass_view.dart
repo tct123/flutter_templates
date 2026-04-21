@@ -21,12 +21,18 @@ class GlassView extends StatelessWidget {
           opacity: animation,
           child: Transform(
             transform: Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation.value), 0.0),
+              0.0,
+              30 * (1.0 - animation.value),
+              0.0,
+            ),
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding:
-                      const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+                  padding: const EdgeInsets.only(
+                    left: 24,
+                    right: 24,
+                    bottom: 24,
+                  ),
                   child: Stack(
                     clipBehavior: Clip.antiAlias,
                     children: <Widget>[
@@ -36,10 +42,11 @@ class GlassView extends StatelessWidget {
                           decoration: const BoxDecoration(
                             color: Color(0xFFD7E0F9),
                             borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(8.0),
-                                bottomLeft: Radius.circular(8.0),
-                                bottomRight: Radius.circular(8.0),
-                                topRight: Radius.circular(8.0)),
+                              topLeft: Radius.circular(8.0),
+                              bottomLeft: Radius.circular(8.0),
+                              bottomRight: Radius.circular(8.0),
+                              topRight: Radius.circular(8.0),
+                            ),
                             // boxShadow: <BoxShadow>[
                             //   BoxShadow(
                             //       color: FintnessAppTheme.grey.withValues(alpha:0.2),
@@ -51,7 +58,11 @@ class GlassView extends StatelessWidget {
                             children: <Widget>[
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    left: 68, bottom: 12, right: 16, top: 12),
+                                  left: 68,
+                                  bottom: 12,
+                                  right: 16,
+                                  top: 12,
+                                ),
                                 child: Text(
                                   'Prepare your stomach for lunch with one or two glass of water',
                                   textAlign: TextAlign.left,
@@ -77,7 +88,7 @@ class GlassView extends StatelessWidget {
                           height: 80,
                           child: Image.asset('assets/fitness_app/glass.png'),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

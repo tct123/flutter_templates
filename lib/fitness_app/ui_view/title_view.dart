@@ -27,7 +27,10 @@ class TitleView extends StatelessWidget {
             opacity: animation,
             child: Transform(
               transform: Matrix4.translationValues(
-                  0.0, 30 * (1.0 - animation.value), 0.0),
+                0.0,
+                30 * (1.0 - animation.value),
+                0.0,
+              ),
               child: Padding(
                 padding: const EdgeInsets.only(left: 24, right: 24),
                 child: Row(
@@ -47,8 +50,9 @@ class TitleView extends StatelessWidget {
                     ),
                     InkWell(
                       highlightColor: Colors.transparent,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(4.0)),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(4.0),
+                      ),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8),
@@ -77,7 +81,7 @@ class TitleView extends StatelessWidget {
                           ],
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

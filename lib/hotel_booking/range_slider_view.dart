@@ -32,10 +32,7 @@ class _RangeSliderViewState extends State<RangeSliderView> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Expanded(
-                  flex: _values.start.round(),
-                  child: const SizedBox(),
-                ),
+                Expanded(flex: _values.start.round(), child: const SizedBox()),
                 SizedBox(
                   width: 54,
                   child: Text(
@@ -51,10 +48,7 @@ class _RangeSliderViewState extends State<RangeSliderView> {
             ),
             Row(
               children: <Widget>[
-                Expanded(
-                  flex: _values.end.round(),
-                  child: const SizedBox(),
-                ),
+                Expanded(flex: _values.end.round(), child: const SizedBox()),
                 SizedBox(
                   width: 54,
                   child: Text(
@@ -71,9 +65,7 @@ class _RangeSliderViewState extends State<RangeSliderView> {
           ],
         ),
         SliderTheme(
-          data: SliderThemeData(
-            rangeThumbShape: CustomRangeThumbShape(),
-          ),
+          data: SliderThemeData(rangeThumbShape: CustomRangeThumbShape()),
           child: RangeSlider(
             values: _values,
             max: 1000.0,
@@ -159,14 +151,21 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
     }
 
     canvas.drawPath(
-        Path()
-          ..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy + 12),
-              Offset(center.dx - 12, center.dy - 12)))
-          ..fillType = PathFillType.evenOdd,
-        Paint()
-          ..color = Colors.black.withValues(alpha: 0.5)
-          ..maskFilter =
-              MaskFilter.blur(BlurStyle.normal, convertRadiusToSigma(8)));
+      Path()
+        ..addOval(
+          Rect.fromPoints(
+            Offset(center.dx + 12, center.dy + 12),
+            Offset(center.dx - 12, center.dy - 12),
+          ),
+        )
+        ..fillType = PathFillType.evenOdd,
+      Paint()
+        ..color = Colors.black.withValues(alpha: 0.5)
+        ..maskFilter = MaskFilter.blur(
+          BlurStyle.normal,
+          convertRadiusToSigma(8),
+        ),
+    );
 
     final Paint cPaint = Paint();
     cPaint.color = Colors.white;

@@ -31,10 +31,7 @@ class _SliderViewState extends State<SliderView> {
       children: <Widget>[
         Row(
           children: <Widget>[
-            Expanded(
-              flex: distValue.round(),
-              child: const SizedBox(),
-            ),
+            Expanded(flex: distValue.round(), child: const SizedBox()),
             SizedBox(
               width: 170,
               child: Text(
@@ -42,16 +39,11 @@ class _SliderViewState extends State<SliderView> {
                 textAlign: TextAlign.center,
               ),
             ),
-            Expanded(
-              flex: 100 - distValue.round(),
-              child: const SizedBox(),
-            ),
+            Expanded(flex: 100 - distValue.round(), child: const SizedBox()),
           ],
         ),
         SliderTheme(
-          data: SliderThemeData(
-            thumbShape: CustomThumbShape(),
-          ),
+          data: SliderThemeData(thumbShape: CustomThumbShape()),
           child: Slider(
             onChanged: (double value) {
               if (mounted) {
@@ -112,14 +104,21 @@ class CustomThumbShape extends SliderComponentShape {
       end: sliderTheme.thumbColor,
     );
     canvas.drawPath(
-        Path()
-          ..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy + 12),
-              Offset(center.dx - 12, center.dy - 12)))
-          ..fillType = PathFillType.evenOdd,
-        Paint()
-          ..color = Colors.black.withValues(alpha: 0.5)
-          ..maskFilter =
-              MaskFilter.blur(BlurStyle.normal, convertRadiusToSigma(8)));
+      Path()
+        ..addOval(
+          Rect.fromPoints(
+            Offset(center.dx + 12, center.dy + 12),
+            Offset(center.dx - 12, center.dy - 12),
+          ),
+        )
+        ..fillType = PathFillType.evenOdd,
+      Paint()
+        ..color = Colors.black.withValues(alpha: 0.5)
+        ..maskFilter = MaskFilter.blur(
+          BlurStyle.normal,
+          convertRadiusToSigma(8),
+        ),
+    );
 
     final Paint cPaint = Paint();
     cPaint.color = Colors.white;
