@@ -98,7 +98,8 @@ class HotelListView extends StatelessWidget {
                                                 width: 4,
                                               ),
                                               Icon(
-                                                FontAwesomeIcons.locationDot,
+                                                FontAwesomeIcons.locationDot
+                                                    as IconData?,
                                                 size: 12,
                                                 color: HotelAppTheme
                                                         .buildLightTheme()

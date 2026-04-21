@@ -26,7 +26,9 @@ class _MealsListViewState extends State<MealsListView>
   void initState() {
     super.initState();
     animationController = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
   }
 
   Future<bool> getData() async {
@@ -49,7 +51,10 @@ class _MealsListViewState extends State<MealsListView>
           opacity: widget.mainScreenAnimation,
           child: Transform(
             transform: Matrix4.translationValues(
-                0.0, 30 * (1.0 - widget.mainScreenAnimation.value), 0.0),
+              0.0,
+              30 * (1.0 - widget.mainScreenAnimation.value),
+              0.0,
+            ),
             child: SizedBox(
               height: 216,
               width: double.infinity,
@@ -58,14 +63,20 @@ class _MealsListViewState extends State<MealsListView>
                 itemCount: mealsListData.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  final int count =
-                      mealsListData.length > 10 ? 10 : mealsListData.length;
+                  final int count = mealsListData.length > 10
+                      ? 10
+                      : mealsListData.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
-                          CurvedAnimation(
-                              parent: animationController,
-                              curve: Interval((1 / count) * index, 1.0,
-                                  curve: Curves.fastOutSlowIn)));
+                        CurvedAnimation(
+                          parent: animationController,
+                          curve: Interval(
+                            (1 / count) * index,
+                            1.0,
+                            curve: Curves.fastOutSlowIn,
+                          ),
+                        ),
+                      );
                   animationController.forward();
 
                   return MealsView(
@@ -99,32 +110,41 @@ class MealsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (_, __) {
+      builder: (_, _) {
         return FadeTransition(
           opacity: animation,
           child: Transform(
             transform: Matrix4.translationValues(
-                100 * (1.0 - animation.value), 0.0, 0.0),
+              100 * (1.0 - animation.value),
+              0.0,
+              0.0,
+            ),
             child: SizedBox(
               width: 130,
               child: Stack(
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 32, left: 8, right: 8, bottom: 16),
+                      top: 32,
+                      left: 8,
+                      right: 8,
+                      bottom: 16,
+                    ),
                     child: Container(
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                              color:
-                                  mealsListData.endColor.withValues(alpha: 0.6),
-                              offset: const Offset(1.1, 4.0),
-                              blurRadius: 8.0),
+                            color: mealsListData.endColor.withValues(
+                              alpha: 0.6,
+                            ),
+                            offset: const Offset(1.1, 4.0),
+                            blurRadius: 8.0,
+                          ),
                         ],
                         gradient: LinearGradient(
                           colors: <Color>[
                             mealsListData.startColor,
-                            mealsListData.endColor
+                            mealsListData.endColor,
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
@@ -138,7 +158,11 @@ class MealsView extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
-                            top: 54, left: 16, right: 16, bottom: 8),
+                          top: 54,
+                          left: 16,
+                          right: 16,
+                          bottom: 8,
+                        ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,8 +180,10 @@ class MealsView extends StatelessWidget {
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 8, bottom: 8),
+                                padding: const EdgeInsets.only(
+                                  top: 8,
+                                  bottom: 8,
+                                ),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
@@ -191,8 +217,10 @@ class MealsView extends StatelessWidget {
                                     ),
                                   ),
                                   const Padding(
-                                    padding:
-                                        EdgeInsets.only(left: 4, bottom: 3),
+                                    padding: EdgeInsets.only(
+                                      left: 4,
+                                      bottom: 3,
+                                    ),
                                     child: Text(
                                       'kcal',
                                       style: TextStyle(
@@ -213,10 +241,11 @@ class MealsView extends StatelessWidget {
                                   shape: BoxShape.circle,
                                   boxShadow: <BoxShadow>[
                                     BoxShadow(
-                                        color: FitnessAppTheme.nearlyBlack
-                                            .withValues(alpha: 0.4),
-                                        offset: const Offset(8.0, 8.0),
-                                        blurRadius: 8.0),
+                                      color: FitnessAppTheme.nearlyBlack
+                                          .withValues(alpha: 0.4),
+                                      offset: const Offset(8.0, 8.0),
+                                      blurRadius: 8.0,
+                                    ),
                                   ],
                                 ),
                                 child: Padding(
@@ -240,8 +269,9 @@ class MealsView extends StatelessWidget {
                       width: 84,
                       height: 84,
                       decoration: BoxDecoration(
-                        color:
-                            FitnessAppTheme.nearlyWhite.withValues(alpha: 0.2),
+                        color: FitnessAppTheme.nearlyWhite.withValues(
+                          alpha: 0.2,
+                        ),
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -254,7 +284,7 @@ class MealsView extends StatelessWidget {
                       height: 80,
                       child: Image.asset(mealsListData.imagePath),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

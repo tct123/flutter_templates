@@ -16,31 +16,44 @@ class WorkoutView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (_, __) {
+      builder: (_, _) {
         return FadeTransition(
           opacity: animation,
           child: Transform(
             transform: Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation.value), 0.0),
+              0.0,
+              30 * (1.0 - animation.value),
+              0.0,
+            ),
             child: Padding(
               padding: const EdgeInsets.only(
-                  left: 24, right: 24, top: 16, bottom: 18),
+                left: 24,
+                right: 24,
+                top: 16,
+                bottom: 18,
+              ),
               child: Container(
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: <Color>[
-                    FitnessAppTheme.nearlyDarkBlue,
-                    Color(0xFF6F56E8)
-                  ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+                  gradient: const LinearGradient(
+                    colors: <Color>[
+                      FitnessAppTheme.nearlyDarkBlue,
+                      Color(0xFF6F56E8),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
                   borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(8.0),
-                      bottomLeft: Radius.circular(8.0),
-                      bottomRight: Radius.circular(8.0),
-                      topRight: Radius.circular(68.0)),
+                    topLeft: Radius.circular(8.0),
+                    bottomLeft: Radius.circular(8.0),
+                    bottomRight: Radius.circular(8.0),
+                    topRight: Radius.circular(68.0),
+                  ),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: FitnessAppTheme.grey.withValues(alpha: 0.6),
-                        offset: const Offset(1.1, 1.1),
-                        blurRadius: 10.0),
+                      color: FitnessAppTheme.grey.withValues(alpha: 0.6),
+                      offset: const Offset(1.1, 1.1),
+                      blurRadius: 10.0,
+                    ),
                   ],
                 ),
                 child: Padding(
@@ -110,10 +123,11 @@ class WorkoutView extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 boxShadow: <BoxShadow>[
                                   BoxShadow(
-                                      color: FitnessAppTheme.nearlyBlack
-                                          .withValues(alpha: 0.4),
-                                      offset: const Offset(8.0, 8.0),
-                                      blurRadius: 8.0),
+                                    color: FitnessAppTheme.nearlyBlack
+                                        .withValues(alpha: 0.4),
+                                    offset: const Offset(8.0, 8.0),
+                                    blurRadius: 8.0,
+                                  ),
                                 ],
                               ),
                               child: const Padding(
@@ -124,10 +138,10 @@ class WorkoutView extends StatelessWidget {
                                   size: 44,
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
