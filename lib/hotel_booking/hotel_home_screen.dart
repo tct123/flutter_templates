@@ -589,7 +589,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       onTap: () {},
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: Icon(FontAwesomeIcons.locationDot as IconData?),
+                        child: FaIcon(FontAwesomeIcons.locationDot),
                       ),
                     ),
                   ],
